@@ -1,16 +1,16 @@
-FROM lambci/lambda-base:build
+FROM lambci/lambda-base-2:build
 
 ARG LEPTONICA_VERSION=1.78.0
 ARG TESSERACT_VERSION=4.1.0-rc4
 ARG AUTOCONF_ARCHIVE_VERSION=2017.09.28
-ARG TMP_BUILD=/tmp
+ARG TMP_BUILD=/home/jeff/tmpbuild
 ARG TESSERACT=/opt/tesseract
 ARG LEPTONICA=/opt/leptonica
 ARG DIST=/opt/build-dist
 # change OCR_LANG to enable the layer for different languages
-ARG OCR_LANG=deu
+ARG OCR_LANG=spa
 # change TESSERACT_DATA_SUFFIX to use different datafiles (options: "_best", "_fast" and "")
-ARG TESSERACT_DATA_SUFFIX=_fast
+ARG TESSERACT_DATA_SUFFIX=_best
 ARG TESSERACT_DATA_VERSION=4.0.0
 
 RUN yum makecache fast; yum clean all && yum -y update && yum -y upgrade; yum clean all && \
