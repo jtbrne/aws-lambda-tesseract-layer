@@ -13,3 +13,10 @@ layers:
     path: layer
     compatibleRuntimes:
       - nodejs12.x
+resources:
+  Outputs:
+    TesseractgLayerExport:
+      Value:
+        Ref: TesseractLambdaLayer
+      Export:
+        Name: TesseractLambdaLayer
